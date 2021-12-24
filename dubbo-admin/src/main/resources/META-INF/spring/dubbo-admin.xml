@@ -20,7 +20,7 @@
 	
 	<dubbo:application name="dubbo-admin" />
 
-	<dubbo:registry address="${dubbo.registry.address}" check="false" file="false" />
+	<dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" check="false" file="${dubbo.registry.file}" />
 
 	<dubbo:reference id="registryService" interface="com.alibaba.dubbo.registry.RegistryService" check="false" />
 
