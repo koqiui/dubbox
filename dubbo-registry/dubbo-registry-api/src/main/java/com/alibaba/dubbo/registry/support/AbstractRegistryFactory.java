@@ -83,7 +83,7 @@ public abstract class AbstractRegistryFactory implements RegistryFactory {
     	url = url.setPath(RegistryService.class.getName())
     			.addParameter(Constants.INTERFACE_KEY, RegistryService.class.getName())
     			.removeParameters(Constants.EXPORT_KEY, Constants.REFER_KEY);
-    	String key = url.toServiceString();
+    	String key = url.toServiceString(true);
         // 锁定注册中心获取过程，保证注册中心单一实例
         LOCK.lock();
         try {

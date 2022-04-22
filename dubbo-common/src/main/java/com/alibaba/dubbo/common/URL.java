@@ -1198,8 +1198,14 @@ public final class URL implements Serializable {
         return buf.toString();
     }
 
+    @Deprecated
+    /** 容易导致超时（改为下面的方法） */
     public String toServiceString() {
     	return buildString(true, false, true, true);
+    }
+    
+    public String toServiceString(boolean useIP) {
+    	return buildString(true, false, useIP, true);
     }
 
     @Deprecated
